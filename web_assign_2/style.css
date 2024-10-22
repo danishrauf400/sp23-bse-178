@@ -1,0 +1,13 @@
+.myVideo {
+    object-fit: cover;
+    z-index: -1;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+#search-cart-img {
+    max-height: 30px;
+}

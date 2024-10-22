@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Order Place Section -->
+    <section class="order-section">
+        <div class="form-container">
+            <h2>Place Your Order</h2>
+
+            <!-- Order Form -->
+            <form id="orderForm" action="#" method="post">
+
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h4>Personal Information</h4>
+                    <div class="input-box">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="form-section">
+                    <h4>Shipping Information</h4>
+                    <div class="input-box">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" name="zip" required>
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="form-section">
+                    <h4>Payment Information</h4>
+                    <div class="input-box">
+                        <label for="cardName">Name on Card</label>
+                        <input type="text" id="cardName" name="cardName" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="expiryMonth">Expiry Month</label>
+                        <input type="text" id="expiryMonth" name="expiryMonth" placeholder="MM" required>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="expiryYear">Expiry Year</label>
+                        <input type="text" id="expiryYear" name="expiryYear" placeholder="YYYY" required>
+                        <small class="error"></small>
+                    </div>
+
+           
+                <!-- Submit Button -->
+                <div class="submit-btn">
+                    <button type="submit">Place Order</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
