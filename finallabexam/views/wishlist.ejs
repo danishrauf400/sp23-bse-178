@@ -1,0 +1,30 @@
+<h3>Your Wishlist</h3>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Product Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (wishlist && wishlist.products.length > 0) { %>
+            <% wishlist.products.forEach(product => { %>
+                <tr>
+                    <td><%= product.title %></td>
+                    <td><%= product.description %></td>
+                    <td><%= product.price %></td>
+                    <td>
+                        <a href="/cart/add/<%= product._id %>" class="btn btn-primary">Add to Cart</a>
+                        <a href="/wishlist/remove/<%= product._id %>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td colspan="4">Your wishlist is empty.</td>
+            </tr>
+        <% } %>
+ </tbody>
+</table>

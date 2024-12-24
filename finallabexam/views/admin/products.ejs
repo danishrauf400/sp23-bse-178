@@ -1,0 +1,66 @@
+<h3>Products</h3>
+
+<!-- Sorting Form -->
+<form action="/admin/products" method="GET" class="mb-3">
+    <input type="text" name="search" value="<%= searchQuery %>" placeholder="Search products..." class="form-control" />
+    
+    <label for="sortBy">Sort By:</label>
+    <select name="sortBy" class="form-control">
+        <option value="title" <%= sortBy === 'title' ? 'selected' : '' %>>Title</option>
+        <option value="price" <%= sortBy === 'price' ? 'selected' : '' %>>Price</option>
+    </select>
+    
+    <label for="sortOrder">Order:</label>
+    <select name="sortOrder" class="form-control">
+        <option value="asc" <%= sortOrder === 1 ? 'selected' : '' %>>Ascending</option>
+        <option value="desc" <%= sortOrder === -1 ? 'selected' : '' %>>Descending</option>
+    </select>
+    
+    < ```html
+    <button type="submit" class="btn btn-primary mt-2">Sort</button>
+</form>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <% for( let index = 1; index <= totalPages; index++ ) { %>
+            <li class="page-item"><a class="page-link" href="/admin/products/<%= index %>?search=<%= searchQuery %>&sortBy=<%= sortBy %>&sortOrder=<%= sortOrder %>"><%= index %></a></li>
+        <% } %>
+    </ul>
+</nav>
+
+<a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>_id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Is Featured</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let index = 0; index < products.length; index++ ) { %>
+            <tr>
+                <td><%= products[index]._id %></td>
+                <td><%= products[index].title %></td>
+                <td><%= products[index].description %></td>
+                <td><%= products[index].price %></td>
+                <td><%= products[index].isFeatured %></td>
+                <td><img src="/<%= products[index].picture %>" width="100px"/> </td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[index]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/products/delete/<%= products[index]._id %>" class="btn btn-danger">Del</a>
+                </td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[index]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/products/delete/<%= products[index]._id %>" class="btn btn-danger">Del</a>
+                    <form action="/wishlist/add/<%= products[index]._id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-success">Add to Wishlist</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

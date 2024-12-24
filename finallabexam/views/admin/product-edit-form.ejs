@@ -1,0 +1,23 @@
+<form action="/admin/products/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" value="<%= product.title %>" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="description" class="form-control" required><%= product.description %></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="price" class="form-control" value="<%= product.price %>" required>
+    </div>
+    <div class="mb-3">
+        <label for="isFeatured" class="form-label">Is Featured</label>
+        <input type="checkbox" name="isFeatured" value="true" <%= product.isFeatured ? 'checked' : '' %>>
+    </div>
+    <div class="mb-3">
+        <label for="file" class="form-label">Upload New Image (optional)</label>
+        <input type="file" name="file" class="form-control" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-warning">Update Product</button>
+</form>
